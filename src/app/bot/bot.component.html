@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row col-xs-12">
+    <div class="well well-lg chat_window w-100" style="background-color:rgba(63, 65, 63, 0.56)">
+      <div *ngIf="clientMessage.length >= 4" class="more_messages">. . .</div>
+        <ul class="list-group my-3" *ngFor="let message of clientMessage" 
+        [ngClass]="message.avatar === 'Your Message' ? 'client' : 'bot'">
+          <li class="list-group-item">{{message.avatar}}</li>
+          <li class="list-group-item">{{message.content}}</li>
+        </ul>
+    </div>
+    <div class="px-0 w-100" style="float:left">
+      <div class="input-group" style="padding:0px">
+        <input type="input" class="form-control" placeholder="Type here..." #message/>
+        <span class="input-group-btn">
+        <button type="button" class="btn btn-dark left" (click)="messageFromInput(message)">SEND</button>
+        </span>
+      </div>
+      
+    </div>
+  </div>
+</div>

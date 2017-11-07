@@ -1,0 +1,36 @@
+.bot{
+    max-width: 75%!important;
+    position: relative;
+    left:25%;
+}
+#mini_me{
+    width:5%;
+}
+.client>li:first-child{
+    background: #111211;
+    color:white;
+}
+.bot>li:first-child{
+    background: rgba(63, 65, 63, 1);
+    text-align: right;
+    color:white;
+}
+.more_messages{
+    text-align: center;
+    font-weight: bold;
+    color:white;
+}
+.chat_window{
+    max-height:500px!important;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px #383A38; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 3px #262726; 
+}

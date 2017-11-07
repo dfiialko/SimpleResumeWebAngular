@@ -1,0 +1,110 @@
+<div class="container-fluid" id="top_container">
+  
+  <div class="row">
+    <div class="top w-100">
+      <div class="vertical-center">
+        <h1 class="name mx-auto">DENYS FIIALKO</h1>
+      </div>
+      <div *ngIf="botChat" class="chat_bot sticky-left">
+        <app-bot></app-bot>
+      </div>
+      <div class="col-8 text-center">
+        <button class="btn btn-dark" (click)="showBot()" id="chatbotButton">Chat with my Bot</button>
+        <img src="../../assets/me.jpg" class="rounded-circle my_photo" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid pt-5 w-100" style="background-color:white">
+  <div class="row py-5">
+      <nav class="navbar mx-auto sticky-top" style="z-index: 300">
+          <ul class="navbar-nav mr-auto" style="display: inline">
+            <li style="display: inline-block;cursor:pointer" class="nav-item" (click)="scroll(aboutme)">ABOUT ME /</li>
+            <li style="display: inline-block;cursor:pointer" class="nav-item" (click)="scroll(ed)">EDUCATION /</li>
+            <li style="display: inline-block;cursor:pointer" class="nav-item" (click)="scroll(skillset)">SKILLSET /</li>
+            <li style="display: inline-block;cursor:pointer" class="nav-item" (click)="scroll(exp)">EXPERIENCES</li>
+          </ul>
+        </nav>
+    <div class="col-12 mx-auto mt-5" >
+      <h1 class="text-center">PERSONAL DETAILS</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 mx-auto mt-5">
+      <h3 class="text-center">This website serves as a proof of my work</h3>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-8 mx-auto mt-5">
+      <span class="text-left">Everything on this website was coded without using templates,frameworks or any consultation from different resources.This websites shows
+        of what I am capable of within one day of work(technically 8 hours). I have used Angular 4, Bootstrap 4, HTML, CSS, JavaScript and Jquery to build this website.It also implements chatbot
+        built with ApiAi.
+      </span>
+    </div>
+  </div>
+  <hr>
+  <!-- ABOUT ME START -->
+  <div class="row text-center pb-5" id="info_row" #aboutme>
+    <div class="col-4 mx-auto mt-5" *ngFor="let about_me of info">
+      <i class="{{about_me.icon}}"></i>
+      <h3>{{about_me.title}}</h3>
+      <p class="w-50 text-left mx-auto">
+        {{about_me.content}}
+      </p>
+    </div>
+  </div>
+  <!-- ABOUT ME FINISHED -->
+  <!-- EDUCATION START -->
+  <h2 class="text-center pt-5">Education</h2>
+  <div class="row text-center py-5" #ed id="education_row">
+    <div class="col-6 mx-auto mt-5" *ngFor="let schoolInfo of education">
+      <h3>{{schoolInfo.schoolName}} <img class="col-xs-2 float-left" src="{{schoolInfo.img}}" class="school_logo" /></h3>
+      <p class="w-50 mx-auto">
+        {{schoolInfo.content}}
+      </p>
+    </div>
+  </div>
+  <!-- EDUCATION FINISH -->
+</div>
+<!-- SKILLS START-->
+<div class="container-fluid" style="background-color: white" #skillset>
+  <div class="container pt-5" id="skillset">
+    <h2 class="text-center">Skillset</h2>
+    <div class="row mb-2" *ngFor="let skill of skills">
+      <div class=" col-xs-12 progress w-75 mx-auto">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{skill.value}" aria-valuemin="0"
+          aria-valuemax="100" [style.width]="skill.width">
+          {{skill.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SKILLS FINISH -->
+<div class="container-fluid pt-5" #exp id="experience" >
+  <h2 class="text-center">Experiences</h2>
+  <div class="row text-center my-5" id="experience_row">
+    <div class="col-4" *ngFor="let experience of experiences" >
+      <h3 style="border:2px solid #71ced2;color:#71ced2 ">{{experience.companyName}}</h3>
+      <p style="color:#71ced2">{{experience.website}}</p>
+      <span class="{{experience.icon}}"></span>
+      <p style="color:#3a3a3a;font-weight:bold">{{experience.jobtitle}}</p>
+      <p>{{experience.duration}}</p>
+      <p>{{experience.shortContent}}</p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid footer p-0" id="footer" style="overflow: hidden">
+  <div class="container-fluid p-0" id="inside_footer">
+    <div class="row text-center px-0" style="color:white">
+      <div class="col-12 py-5 px-0"> 
+          <h3 >CONTACT ME</h3>
+          <p>denys.fiialko@gmail.com</p>
+          <p>204 - 218 - 3836</p>
+      </div>
+        
+        
+    </div>
+  </div>
+</div>
