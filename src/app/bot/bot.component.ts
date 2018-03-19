@@ -14,6 +14,7 @@ export class BotComponent implements OnInit {
   // Creates array of type Message for inputs
   clientMessage: Message[] = [];
   @ViewChild('message') inputMessage: ElementRef;
+  @ViewChild('botContainer') botContainer: ElementRef;
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.key === 'Enter') {
@@ -37,8 +38,10 @@ export class BotComponent implements OnInit {
           avatar: 'BOT',
           content: response.result.fulfillment['speech'] || 'I can\'t seem to figure that out!'
         });
+        setTimeout(() => { this.botContainer.nativeElement.scrollTop = this.botContainer.nativeElement.scrollHeight; }, 500);
         message.value = '';
       });
     }
+
   }
 }

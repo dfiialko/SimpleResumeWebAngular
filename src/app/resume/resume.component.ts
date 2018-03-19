@@ -1,5 +1,5 @@
 import { element } from 'protractor';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 declare var jquery: any;
 declare var $: any;
 // tslint:disable:max-line-length
@@ -10,22 +10,23 @@ declare var $: any;
 })
 export class ResumeComponent implements OnInit {
   botChat = false;
+  @ViewChild('botContainer') botContainer: ElementRef;
   // This array holds data for about me Section(Address,Interests,Profile)
   info: Array<{ icon: string, title: string, content: string }> = [
-    {
-      icon: 'flaticon-house',
-      title: 'Address',
-      content: ' 1194 St.Mathews Ave, Winnipeg, Manitoba, Canada'
-    },
-    {
-      icon: 'flaticon-book',
-      title: 'Interestes',
-      content: 'Participating in IT Meetups and Organizations\nSpending a night in the mountains\nHelping people to the best of my abilities'
-    },
     {
       icon: 'flaticon-avatar',
       title: 'Profile',
       content: 'Since I have moved to Canada, I was determined to make programming my long-time career.I dedicate most of my time to school and online courses in order to improve my knowledge and obtain experience in the industry.'
+    },
+    {
+      icon: 'flaticon-book',
+      title: 'Interestes',
+      content: 'Participating in IT Meetups and Organizations\nSelf-improvement\nHelping people to the best of my abilities'
+    },
+    {
+      icon: 'flaticon-house',
+      title: 'Address',
+      content: ' 1194 St.Mathews Ave, Winnipeg, MB, Canada'
     }
   ];
 
@@ -52,6 +53,7 @@ export class ResumeComponent implements OnInit {
     { value: '25', name: 'JQuery', width: '25%' },
     { value: '95', name: 'CSS', width: '95%' },
     { value: '70', name: 'SQL', width: '70%' },
+    { value: '35', name: 'Ruby', width: '35%' },
   ];
 
   experiences: Array<{ companyName: string, website: string, jobtitle: string, duration: string, shortContent: string, icon: string }> = [
@@ -98,6 +100,7 @@ export class ResumeComponent implements OnInit {
       // if the target of the click isn't the container nor a descendant of the container
       if (!container.is(e.target) && container.has(e.target).length === 0 && !chatbotButton.is(e.target)) {
         container.hide();
+        this.botChat = false;
       }
     });
   }
