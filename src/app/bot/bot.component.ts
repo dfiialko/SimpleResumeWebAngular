@@ -10,7 +10,7 @@ import { ApiAiClient } from 'api-ai-javascript';
 
 export class BotComponent implements OnInit {
   // Create instance of ApiAi client with access token
-  client = new ApiAiClient({ accessToken: '5ea7f74f2f2f4fa5a14288ec430783a8' });
+  client = new ApiAiClient({ accessToken: '******************' });
   // Creates array of type Message for inputs
   clientMessage: Message[] = [];
   @ViewChild('message') inputMessage: ElementRef;
