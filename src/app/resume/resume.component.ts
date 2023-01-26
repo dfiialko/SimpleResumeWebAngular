@@ -20,13 +20,13 @@ export class ResumeComponent implements OnInit {
     },
     {
       icon: 'flaticon-book',
-      title: 'Interestes',
+      title: 'Interests',
       content: 'Participating in IT Meetups and Organizations\nSelf-improvement\nHelping people to the best of my abilities'
     },
     {
       icon: 'flaticon-house',
       title: 'Address',
-      content: ' 1194 St.Mathews Ave, Winnipeg, MB, Canada'
+      content: ' 1189 Howe St, Vancouver, BC, Canada'
     }
   ];
 
@@ -50,36 +50,45 @@ export class ResumeComponent implements OnInit {
     { value: '78', name: 'JAVASCRIPT', width: '78%' },
     { value: '95', name: 'HTML', width: '95%' },
     { value: '55', name: 'C#', width: '55%' },
+    { value: '55', name: '.NET', width: '55%' },
     { value: '25', name: 'JQuery', width: '25%' },
     { value: '95', name: 'CSS', width: '95%' },
     { value: '70', name: 'SQL', width: '70%' },
-    { value: '35', name: 'Ruby', width: '35%' },
+    { value: '70', name: 'Ansible', width: '70%' },
   ];
 
-  experiences: Array<{ companyName: string, website: string, jobtitle: string, duration: string, shortContent: string, icon: string }> = [
+  experiences: Array<{ companyName: string, website: string, jobtitle: string, duration: string, shortContent:Array<string>, icon: string }> = [
     {
-      companyName: 'Intouch Networks',
+      companyName: 'Prometric',
       icon: 'flaticon-monitor',
-      website: 'www.intouchnetworks.ca',
-      jobtitle: 'Computer Technician',
-      duration: '6 Months',
-      shortContent: 'I have installed,configured and maintained networks for new and existing clients.\nDuring my time working there I have implemented REST API services into the company website to improve user experience and allow customers to add services through the website./nWorked on companies website'
+      website: 'www.prometric.com',
+      jobtitle: 'Software Egineer II',
+      duration: '2021-Present',
+      shortContent: 
+      ['Designed and implemented scalable APIs and background workers for automating internal processes of the company using .NET Core, RabbitMQ, MSSQL and Windows scheduling solutions.',
+      'Led the development of several web applications, from identifying system requirements and dependencies to software implementation, database design, engineering, testing and monitoring',
+      'Implemented a CI/CD Azure DevOps pipeline with GIT, MSBuild, Docker and Kubernetes.']
     },
     {
-      companyName: 'College Pro',
+      companyName: 'Paragon',
       icon: 'flaticon-speaker',
-      website: 'www.colegepro.com',
-      jobtitle: 'Manager',
-      duration: '5 Months',
-      shortContent: 'I worked with HR department to recruit labourer workers for summer season\nSaved 15% of cost on every project by taking over service center functionality\nWorked directly with customers,conducting estimates,selling services and colecting feedback'
+      website: 'www.celpip.ca',
+      jobtitle: 'Software Engineer I',
+      duration: '2018-2021',
+      shortContent: 
+      ['Designed and developed CI/CD pipeline using Jenkins, Ansible, Powershell and Groovy Scripts, lowering application release time by 70%.',
+      'Implemented and tested worldwide content delivery using AWS CDN, AWS S3, C# .NET.',
+      'Configured a multi-tiered dev environment for the development team, providing them with an easier and more reliable way to test their changes and showcase work to the stakeholders.']
     },
     {
-      companyName: 'Globus',
+      companyName: 'Cassidy E-Care',
       icon: 'flaticon-phone-call',
-      website: 'www.globus.ck.ua',
-      jobtitle: 'Office Manager',
-      duration: '1.5 years',
-      shortContent: 'I have managed bulk sales of office supplies and computer equipment \nIncreased annual company sales by 23%\n'
+      website: 'https://www.cassidye-care.com/',
+      jobtitle: 'Intern Software Developer',
+      duration: '2017-2018',
+      shortContent: 
+      ['Led the front-end development of a one-page application using MongoDB, Express JS, Angular, Node JS and Responsive Bootstrap Design.',
+      'Collaborated with stakeholders to gather functional and non-functional requirements, design mockups, and develop the application content.']
     }
 
 

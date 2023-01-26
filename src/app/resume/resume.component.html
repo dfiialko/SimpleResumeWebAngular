@@ -9,7 +9,7 @@
         <app-bot></app-bot>
       </div>
       <div class="col-8 text-center">
-        <button class="btn btn-dark" (click)="showBot()" id="chatbotButton">Chat with my Bot</button>
+        <!-- <button class="btn btn-dark" (click)="showBot()" id="chatbotButton">Chat with my Bot</button> -->
         <img src="../../assets/me.jpg" class="rounded-circle my_photo" />
       </div>
     </div>
@@ -45,10 +45,10 @@
   <hr>
   <!-- ABOUT ME START -->
   <div class="row text-center pb-5" id="info_row" #aboutme>
-    <div class="col-4 mx-auto mt-5" *ngFor="let about_me of info">
+    <div class="col-md-4 col-sm-1 mx-auto mt-5" *ngFor="let about_me of info">
       <i class="{{about_me.icon}}"></i>
       <h3>{{about_me.title}}</h3>
-      <p class="w-50 text-left mx-auto">
+      <p class="w-100 text-center mx-auto">
         {{about_me.content}}
       </p>
     </div>
@@ -57,9 +57,9 @@
   <!-- EDUCATION START -->
   <h2 class="text-center pt-5">Education</h2>
   <div class="row text-center py-5" #ed id="education_row">
-    <div class="col-6 mx-auto mt-5" *ngFor="let schoolInfo of education">
+    <div class="col-md-6 col-sm-1 mx-auto mt-5" *ngFor="let schoolInfo of education">
       <h3>{{schoolInfo.schoolName}} <img class="col-xs-2 float-left" src="{{schoolInfo.img}}" class="school_logo" /></h3>
-      <p class="w-50 mx-auto">
+      <p class="w-80 mx-auto">
         {{schoolInfo.content}}
       </p>
     </div>
@@ -84,13 +84,14 @@
 <div class="container-fluid pt-5" #exp id="experience" >
   <h2 class="text-center">Experiences</h2>
   <div class="row text-center my-5" id="experience_row">
-    <div class="col-4" *ngFor="let experience of experiences" >
+    <div class="col-md-4 col-sm-2" *ngFor="let experience of experiences" >
       <h3 style="border:2px solid #71ced2;color:#71ced2 ">{{experience.companyName}}</h3>
       <p style="color:#71ced2">{{experience.website}}</p>
       <span class="{{experience.icon}}"></span>
       <p style="color:#3a3a3a;font-weight:bold">{{experience.jobtitle}}</p>
       <p>{{experience.duration}}</p>
-      <p>{{experience.shortContent}}</p>
+      <p class="resume-content" *ngFor="let content of experience.shortContent"> {{ content }}</p>
+      <!-- <p>{{experience.shortContent}}</p> -->
     </div>
   </div>
 </div>
@@ -100,7 +101,7 @@
       <div class="col-12 py-5 px-0"> 
           <h3 >CONTACT ME</h3>
           <p>denys.fiialko@gmail.com</p>
-          <p>204 - 218 - 3836</p>
+          <p>604 - 230 - 36772</p>
       </div>
         
         
